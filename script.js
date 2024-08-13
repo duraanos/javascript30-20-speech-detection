@@ -14,7 +14,7 @@ recognition.continuous = true;
 recognition.interimResults = true;
 recognition.lang = 'en-US';
 
-recognition.addEventListener('results', function (e) {
+recognition.addEventListener('result', function (e) {
   console.log(e);
   const transcript = [...e.results]
     .map(result => result[0])
@@ -29,5 +29,5 @@ recognition.addEventListener('results', function (e) {
   }
 });
 
-// recognition.start();
-recognition.addEventListener('end', recognition.start);
+recognition.start();
+// recognition.addEventListener('end', recognition.start);
