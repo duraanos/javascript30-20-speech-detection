@@ -15,8 +15,8 @@ recognition.interimResults = true;
 recognition.lang = 'en-US';
 
 recognition.addEventListener('result', function (e) {
-  console.log(e);
-  const transcript = [...e.results]
+  console.log(e.results);
+  const transcript = Array.from(e.results)
     .map(result => result[0])
     .map(result => result.transcript)
     .join('');
